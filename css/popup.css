@@ -12,12 +12,12 @@
     overflow-y: hidden;
     transition: all 0.8s ease 0s;
 }
-.popup:target {
+.popup.open {
     opacity: 1;
     visibility: visible;
 }
 
-.popup:target .popup__content {
+.popup.open .popup__content {
     transform: perspective(60px) translate(0px, 0%) rotateX(0deg);
     opacity: 1;
 }
