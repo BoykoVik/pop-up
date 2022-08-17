@@ -7,6 +7,27 @@
     left: 0;
     opacity: 0;
     visibility: hidden;
+    /*для скролла по вертикали в попапе*/
+    overflow-y: auto;
+    overflow-y: hidden;
+    transition: all 0.8s ease 0s;
+}
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup:target .popup__content {
+    transform: perspective(60px) translate(0px, 0%) rotateX(0deg);
+    opacity: 1;
+}
+
+.popup__area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 .popup__body {
     min-height: 100%;
@@ -18,9 +39,12 @@
 .popup__content {
     background-color: #fff;
     color: black;
-    min-width: 800px;
+    max-width: 800px;
     padding: 30px;
     position: relative;
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+    transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
 }
 .popup__close {
     position: absolute;
