@@ -5,9 +5,33 @@
     background-color: rgba(0, 0, 0, 0.8);
     top: 0;
     left: 0;
+    opacity: 0;
+    visibility: hidden;
 }
-.popup__body {}
-.popup__content {}
-.popup__close {}
-.popup__title {}
+.popup__body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+}
+.popup__content {
+    background-color: #fff;
+    color: black;
+    min-width: 800px;
+    padding: 30px;
+    position: relative;
+}
+.popup__close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+.popup__title {
+    font-size: 40px;
+    margin: 0 0 1em 0;
+}
 .popup__text {}

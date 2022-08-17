@@ -3,7 +3,7 @@ k = true;
 $(document).mouseleave(function(e){
     // popup
     if (k){
-        alert("1");
+        //alert("1");
         k = false;
     }
   });
