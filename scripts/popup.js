@@ -46,10 +46,99 @@ function popupOpen(curentPopup) {
   }
 }
 
+function popupClose(popupActive, doUnlock = true) {
+  if (unlock) {
+    popupActive.classList.remove('open');
+    if (doUnlock) {
+      bodyUnLock();
+    }
+  }
+}
+
+//скрытие скролла
+function bodyLock() {
+  const lockPaddingValue = window.innerHeight - document.querySelector('.wrapper').offsetWidth + 'px';
+
+  if (lockPadding.length > 0){
+    for (let index = 0; index < lockPadding.length; index++) {
+      const el = lockPadding[index];
+      el.getElementsByClassName.paddingRight = lockPaddingValue;
+    }
+  }
+  body.style.paddingRight = lockPaddingValue;
+  body.classList.add('lock');
+
+  unlock = false;
+  setTimeout(function () {
+    unlock = true;
+  }, timeout);
+}
+
+function bodyUnLock() {
+  setTimeout(function () {
+    if (lockPadding.length > 0) {
+      for (let i = 0; i < lockPadding.length; i++) {
+        const el = lockPadding[i];
+        el.style.paddingRight = '0px';
+      }
+    }
+    
+    body.style.paddingRight = '0px';
+    body.classList.remove('lock');
+    }, timeout);
+
+  unlock = false;
+  setTimeout(function () {
+    unlock = true;
+  }, timeout);
+}
+
+//закрытие по нажатию клавиши Esc
+document.addEventListener('keydown', function (e) {
+  if (e.which === 27) {
+    const popupActive = document.querySelector('.popup.open');
+    popupClose(popupActive);
+  }
+});
 
 
 
 
+
+//Полифилы
+(function() {
+
+  // проверяем поддержку
+  if (!Element.prototype.closest) {
+
+    // реализуем
+    Element.prototype.closest = function(css) {
+      var node = this;
+
+      while (node) {
+        if (node.matches(css)) return node;
+        else node = node.parentElement;
+      }
+      return null;
+    };
+  }
+
+})();
+
+(function() {
+
+  // проверяем поддержку
+  if (!Element.prototype.matches) {
+
+    // определяем свойство
+    Element.prototype.matches = Element.prototype.matchesSelector ||
+      Element.prototype.webkitMatchesSelector ||
+      Element.prototype.mozMatchesSelector ||
+      Element.prototype.msMatchesSelector;
+
+  }
+
+})();
 
 
 k = true;
