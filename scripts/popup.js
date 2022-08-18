@@ -140,17 +140,6 @@ document.addEventListener('keydown', function (e) {
 
 })();
 
-
-k = true;
-$(document).mouseleave(function(e){
-    // popup
-    if (k){
-        //alert("1");
-        k = false;
-    }
-  });
-
-
 /* алерт при закрытии (не меняется)
 №1 вариант
 window.addEventListener("beforeunload", function (e) {
