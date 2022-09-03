@@ -101,10 +101,6 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-
-
-
-
 //Полифилы
 (function() {
 
@@ -140,23 +136,27 @@ document.addEventListener('keydown', function (e) {
 
 })();
 
-/* алерт при закрытии (не меняется)
-№1 вариант
-window.addEventListener("beforeunload", function (e) {
-    var confirmationMessage = "Текст в раздражающем пользователя окне";
-    (e || window.event).returnValue = confirmationMessage;
-    return false;
-});
-№2 вариант
-window.onbeforeunload = function (evt) {
-    var message = "Document 'foo' is not saved. You will lost the changes if you leave the page.";
-    if (typeof evt == "undefined") {
-      evt = window.event;
-    }
-    if (evt) {
-      evt.returnValue = message;
-    }
-    return message;
-  }
-*/
 
+k = true;
+const curentPopupToOpen = document.getElementById('popup');
+$(document).mouseleave(function(e){
+  setTimeout(function () {
+    oppp();
+  }, 3000);
+  
+    
+  });
+
+  function oppp() {
+    if ($(document).mouseleave){
+      if (k){
+        popupOpen(curentPopupToOpen);
+        k = false;
+    }
+    }
+  }
+
+  /*if (k){
+    popupOpen(curentPopupToOpen);
+    k = false;
+}*/

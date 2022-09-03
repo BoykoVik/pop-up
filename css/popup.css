@@ -61,4 +61,7 @@ body.lock {
     font-size: 40px;
     margin: 0 0 1em 0;
 }
-.popup__text {}
+.popup__text {
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 300;
+}
