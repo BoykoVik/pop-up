@@ -139,22 +139,24 @@ document.addEventListener('keydown', function (e) {
 
 k = true;
 const curentPopupToOpen = document.getElementById('popup');
+
 $(document).mouseleave(function(e){
-  setTimeout(function () {
-    oppp();
-  }, 3000);
   
-    
+  setTimeout(function () {
+    popupOpen(curentPopupToOpen);
+    oppp();
+  }, 700);
+  
   });
 
-  function oppp() {
-    if ($(document).mouseleave){
-      if (k){
-        popupOpen(curentPopupToOpen);
-        k = false;
-    }
-    }
+function oppp() {
+  if ($(document).mouseleave){
+    if (k){
+      popupOpen(curentPopupToOpen);
+      k = false;
   }
+  }
+}
 
   /*if (k){
     popupOpen(curentPopupToOpen);
