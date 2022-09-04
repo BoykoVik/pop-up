@@ -143,7 +143,6 @@ const curentPopupToOpen = document.getElementById('popup');
 $(document).mouseleave(function(e){
   
   setTimeout(function () {
-    popupOpen(curentPopupToOpen);
     oppp();
   }, 700);
   
