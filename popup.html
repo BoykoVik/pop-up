@@ -22,21 +22,23 @@
 
 
 </body>
-<script src="scripts/popupmin.js"></script>
-<script>
-    window.onload = function () {
-        //modal = new PopupModal();
-        //modal.trigger = 'mouseleave';//триггер
-        //modal.title = 'Заголовок';//заголовок
-        //modal.imageUrl = 'imgs/apache.png';//урл картинки
-        //modal.text = 'текст всплывающего окна';//текст
-        //modal.btntext = 'текст кнопки';//текст кнопки
-        //modal.btnUrl = 'imgs/apache.png';//урл кнопки
-        //modal.btnId = 'btn';//id кнопки
-        //modal.targetClass = 'footer';//где вставлять (класс)
-        modal = new PopupModal('mouseleave', 'Заголовок', 'imgs/apache.png', 'текст всплывающего окна', 'текст кнопки', 'imgs/apache.png', 'btn', 'footer');
-        modal.insertdiv();
+<script  type='text/javascript'>
+    window.onload = function () {}
+        var popup_settings = {
+                            trigger:"mouse-leave-from-vieport",
+                            popup_content: {
+                                title: "<b>text</b> of title!",
+                                img_url: "imgs\\apache.png",
+                                desc: 'Lorem <a href="xxx">insput</a> and ...'
+                                    },
+                                btn_config: {
+                                    btn_text: "Show more!",
+                                    btn_url: "#",
+                                    btn_id: "my_id"
+                            }
+
     };
+
 </script>
-<!--<script src="scripts/try.js"></script>-->
+<script src="scripts/popupmin.js"></script>
 </html> 
