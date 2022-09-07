@@ -19,61 +19,64 @@ class PopupModal {
               MicroModal.show('modal-1');
             }        
           }, 700);  
-        })
+          })
 
           break;
         case 'on-setting-time':
           break;
 
         default:
-          alert( "Нет таких значений" );
+          //alert( "Нет таких значений" );
+          break;
       }
       document.head.insertAdjacentHTML('afterend', `<style>
-                                                        .modal {font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;}
-                                                        .modal__overlay {position: fixed;top: 0;left: 0;right: 0;bottom: 0;background: rgba(0,0,0,0.6);display: flex;justify-content: center;align-items: center;}
-                                                        .modal__container {background-color: #fff;padding: 30px;max-width: 500px;max-height: 100vh;border-radius: 4px;overflow-y: auto;box-sizing: border-box;}
-                                                        .modal__header {display: flex;justify-content: space-between;align-items: center;}
-                                                        .modal__title {margin-top: 0;margin-bottom: 0;font-weight: 600;font-size: 1.25rem;line-height: 1.25;color: #00449e;box-sizing: border-box;}
-                                                        .modal__close {background: transparent;border: 0;}
-                                                        .modal__header .modal__close:before { content: "\\2715"; }
-                                                        .modal__content {margin-top: 2rem;margin-bottom: 2rem;line-height: 1.5;color: rgba(0,0,0,.8);}
-                                                        .modal__btn {font-size: .875rem;padding-left: 1rem;padding-right: 1rem;padding-top: .5rem;padding-bottom: .5rem;background-color: #e6e6e6;color: rgba(0,0,0,.8);border-radius: .25rem;border-style: none;
-                                                        border-width: 0;cursor: pointer;-webkit-appearance: button;text-transform: none;overflow: visible;line-height: 1.15;margin: 0;will-change: transform;-moz-osx-font-smoothing: grayscale;
-                                                        -webkit-backface-visibility: hidden;backface-visibility: hidden;-webkit-transform: translateZ(0);transform: translateZ(0);transition: -webkit-transform .25s ease-out;transition: transform .25s ease-out;transition: transform .25s ease-out,-webkit-transform .25s ease-out;}
-                                                        .modal__btn:focus, .modal__btn:hover {-webkit-transform: scale(1.05);transform: scale(1.05);}
-                                                        .modal__btn-primary {background-color: #00449e;color: #fff;}
-                                                        @keyframes mmfadeIn {from { opacity: 0; } to { opacity: 1; }}
-                                                        @keyframes mmfadeOut {from { opacity: 1; }to { opacity: 0; }}
-                                                        @keyframes mmslideIn {from { transform: translateY(15%); }to { transform: translateY(0); }}
-                                                        @keyframes mmslideOut {from { transform: translateY(0); }to { transform: translateY(-10%); }}
-                                                        .micromodal-slide {display: none;}
-                                                        .micromodal-slide.is-open {display: block;}
-                                                        .micromodal-slide[aria-hidden="false"] .modal__overlay {animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);}
-                                                        .micromodal-slide[aria-hidden="false"] .modal__container {animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);}
-                                                        .micromodal-slide[aria-hidden="true"] .modal__overlay {animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);}
-                                                        .micromodal-slide[aria-hidden="true"] .modal__container {animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);}
-                                                        .micromodal-slide .modal__container, .micromodal-slide .modal__overlay {will-change: transform;}
+.modal {font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;}
+.modal__overlay {position: fixed;top: 0;left: 0;right: 0;bottom: 0;background: rgba(0,0,0,0.6);display: flex;justify-content: center;align-items: center;}
+.modal__container {background-color: #fff;padding: 30px;max-width: 600px;max-height: 100vh;border-radius: 4px;overflow-y: auto;box-sizing: border-box;display: flex;
+align-items: center;}
+.modal__header {display: flex;justify-content: space-between;align-items: center;}
+.modal__title {margin-top: 0;margin-bottom: 10px;font-weight: 600;font-size: 2.25rem;line-height: 1;color: #00449e;box-sizing: border-box;}
+.modal__close {background: transparent;border: 0;position: fixed;top: 10px;right: 10px;width: 20px;height: 20px;cursor: pointer;}
+.modal__image {width: 200px;margin-left: 40px;}.modal__header .modal__close:before { content: "\\2715"; }
+.modal__content {line-height: 1.5;color: rgba(0,0,0,.8);}
+.modal__btn {font-size: .875rem;padding-left: 1rem;padding-right: 1rem;padding-top: .5rem;padding-bottom: .5rem;background-color: #e6e6e6;color: rgba(0,0,0,.8);
+border-radius: .25rem;border-style: none;border-width: 0;cursor: pointer;-webkit-appearance: button;text-transform: none;overflow: visible;line-height: 1.15;margin: 0;margin-top: 10px;
+will-change: transform;-moz-osx-font-smoothing: grayscale;-webkit-backface-visibility: hidden;backface-visibility: hidden;-webkit-transform: translateZ(0);transform: translateZ(0);
+transition: -webkit-transform .25s ease-out;transition: transform .25s ease-out;transition: transform .25s ease-out,-webkit-transform .25s ease-out;}
+.modal__btn:focus, .modal__btn:hover {-webkit-transform: scale(1.05);transform: scale(1.05);}
+.modal__btn-primary {background-color: #00449e;color: #fff;}
+@keyframes mmfadeIn {from { opacity: 0; }to { opacity: 1; }}
+@keyframes mmfadeOut {from { opacity: 1; }to { opacity: 0; }}
+@keyframes mmslideIn {from { transform: translateY(15%); }to { transform: translateY(0); }}
+@keyframes mmslideOut {from { transform: translateY(0); }to { transform: translateY(-10%); }}
+.micromodal-slide {display: none;}
+.micromodal-slide.is-open {display: block;}
+.micromodal-slide[aria-hidden="false"] .modal__overlay {animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);}
+.micromodal-slide[aria-hidden="false"] .modal__container {animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);}
+.micromodal-slide[aria-hidden="true"] .modal__overlay {animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);}
+.micromodal-slide[aria-hidden="true"] .modal__container {animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);}
+.micromodal-slide .modal__container,.micromodal-slide .modal__overlay {will-change: transform;}
                                                       </style>`);
 
       document.getElementsByClassName('footer')[0].innerHTML +=  `<div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
-                                                    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-                                                    <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-                                                        <header class="modal__header">
-                                                          <h2 class="modal__title" id="modal-1-title">` + popup_settings.popup_content.title + `</h2>
-                                                          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
-                                                        </header>
-                                                        <main class="modal__content" id="modal-1-content">
-                                                          <p>` + popup_settings.popup_content.desc + `</p>
-                                                          <img src="` + popup_settings.popup_content.img_url + `" alt="">
-                                                        </main>
-                                                        <footer class="modal__footer">
-                                                          <a href="`+ popup_settings.btn_config.btnUrl +`">
-                                                            <button id="`+ popup_settings.btn_config.btnId +`" class="modal__btn modal__btn-primary">` + popup_settings.btn_config.btn_text + `</button>
-                                                          </a>
-                                                        </footer>
-                                                    </div>
-                                                    </div>
-                                                </div>`;
+                                                                    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                                                                      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                                                                      <button class="modal__close" aria-label="Close modal" data-micromodal-close>X</button>
+                                                                      <main class="modal__content" id="modal-1-content">
+                                                                        <header class="modal__header">
+                                                                          <h2 class="modal__title" id="modal-1-title">` + popup_settings.popup_content.title + `</h2>
+                                                                    </header>
+                                                                      <p>` + popup_settings.popup_content.desc + `</p>
+                                                                      <a href="`+ popup_settings.btn_config.btn_url +`">
+                                                                        <button id="#`+ popup_settings.btn_config.btn_id +`" class="modal__btn modal__btn-primary">` + popup_settings.btn_config.btn_text + `</button>
+                                                                      </a>
+                                                                    </main>
+                                                                    <footer class="modal__footer">
+                                                                    <img class="modal__image" src="` + popup_settings.popup_content.img_url + `" alt="">
+                                                                    </footer>
+                                                                </div>
+                                                                </div>
+                                                            </div>`;
     }
 }
 /*-----------------------------------------------------------------------------------*/
