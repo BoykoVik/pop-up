@@ -32,7 +32,7 @@ class PopupModal {
       document.head.insertAdjacentHTML('afterend', `<style>
 .modal {font-family: -apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;}
 .modal__overlay {position: fixed;top: 0;left: 0;right: 0;bottom: 0;background: rgba(0,0,0,0.6);display: flex;justify-content: center;align-items: center;}
-.modal__container {background-color: #fff;padding: 30px;max-width: 600px;max-height: 100vh;border-radius: 4px;overflow-y: auto;box-sizing: border-box;display: flex;
+.modal__container {background-color: #fff;padding: 30px;max-width: 640px;max-height: 100vh;border-radius: 4px;overflow-y: auto;box-sizing: border-box;display: flex;
 align-items: center;}
 .modal__header {display: flex;justify-content: space-between;align-items: center;}
 .modal__title {margin-top: 0;margin-bottom: 10px;font-weight: 600;font-size: 2.25rem;line-height: 1;color: #00449e;box-sizing: border-box;}
